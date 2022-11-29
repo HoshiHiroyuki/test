@@ -24,6 +24,7 @@ entity Interactions_Items {
 entity WorkPerformance {
 
 key WorkPerformanceID : Integer;
+//ActualWorkTimeWorkPerformanceID  : Composition of many ActualWorkTime on ActualWorkTimeWorkPerformanceID.WorkPerformanceID = $self;
 DailyReportDate : Date;
 DayAndNight : String;
 Group : String;
@@ -37,6 +38,7 @@ entity ActualWorkTime {
 
 key ActualWorkTimeID : Integer;
 WorkPerformanceID : Integer;
+//WorkPerformanceID : association to WorkPerformance;
 StartTime : Time;
 EndTime : Time;
 CreateUser : String;
@@ -114,6 +116,7 @@ UpdateDate : Date;
 };
 
 entity BasicOrderMasterJournalReceived {
+key BasicOrderMasterJournalReceivedID:Integer;
 UpdateClassification : String;
 DataClassification : String;
 ProcessingEmployeeCode : String;
@@ -174,6 +177,7 @@ UpdateDate : DateTime;
 };
 
 entity BasicOrderMasterJournalReceivedR {
+key BasicOrderMasterJournalReceivedRID:Integer;
 UpdateDistinction : String;
 Differentiationofdata : String;
 ProcessingEmployeeConcepts : String;
@@ -205,6 +209,7 @@ UpdateDate : DateTime;
 };
 
 entity BasicOrderMasterJournalReceivedB {
+key BasicOrderMasterJournalReceivedBID:Integer;
 UpdateClassification : String;
 DataClassification : String;
 ProcessingEmployeeCode : String;
