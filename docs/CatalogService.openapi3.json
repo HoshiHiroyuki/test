@@ -10,7 +10,7 @@
   "x-sap-shortText": "Service for namespace CatalogService",
   "servers": [
     {
-      "url": "/catalog"
+       "url": "/catalog"
     }
   ],
   "tags": [
@@ -2683,6 +2683,8 @@
               "items": {
                 "type": "string",
                 "enum": [
+                  "BasicOrderMasterJournalReceivedID",
+                  "BasicOrderMasterJournalReceivedID desc",
                   "UpdateClassification",
                   "UpdateClassification desc",
                   "DataClassification",
@@ -2812,6 +2814,7 @@
               "items": {
                 "type": "string",
                 "enum": [
+                  "BasicOrderMasterJournalReceivedID",
                   "UpdateClassification",
                   "DataClassification",
                   "ProcessingEmployeeCode",
@@ -2935,6 +2938,155 @@
         }
       }
     },
+    "/BasicOrderMasterJournalReceived({BasicOrderMasterJournalReceivedID})": {
+      "parameters": [
+        {
+          "description": "key: BasicOrderMasterJournalReceivedID",
+          "in": "path",
+          "name": "BasicOrderMasterJournalReceivedID",
+          "required": true,
+          "schema": {
+            "type": "integer",
+            "format": "int32"
+          }
+        }
+      ],
+      "get": {
+        "summary": "Retrieve a single basic order master journal received.",
+        "tags": [
+          "BasicOrderMasterJournalReceived"
+        ],
+        "parameters": [
+          {
+            "name": "$select",
+            "description": "Select properties to be returned, see [Select](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionselect)",
+            "in": "query",
+            "explode": false,
+            "schema": {
+              "type": "array",
+              "uniqueItems": true,
+              "items": {
+                "type": "string",
+                "enum": [
+                  "BasicOrderMasterJournalReceivedID",
+                  "UpdateClassification",
+                  "DataClassification",
+                  "ProcessingEmployeeCode",
+                  "Dateprocessed",
+                  "ProcessingTime",
+                  "Destination",
+                  "Destinationconstructionarea",
+                  "Destinationshippingpoint",
+                  "Partnumber",
+                  "Processcodefinalprocess",
+                  "Deliverydestination",
+                  "DESTINATSTRUCTEAREA",
+                  "Receivingplace",
+                  "Address",
+                  "Applicablestartdateofdelivery",
+                  "Applicableenddateofdelivery",
+                  "Orderer",
+                  "Orderersoffice",
+                  "Orderingparty",
+                  "Orderersconstructionarea",
+                  "OrdererReceipt",
+                  "Number",
+                  "Itemname",
+                  "Numberofboxes",
+                  "Boxtype",
+                  "Unit",
+                  "ShelfNo",
+                  "Partsperson",
+                  "Palletclassification",
+                  "Specialnote1Referenceinformation1",
+                  "Specialnote2Referenceinformation2",
+                  "Specialnote3Referenceinformation3",
+                  "Kanbanreadingclassification",
+                  "Arrangementclassification",
+                  "Kanbancycleclassification",
+                  "Kanbancycleday",
+                  "Kanbancycle",
+                  "Kanbancycleafter",
+                  "KanbancycleWeekly",
+                  "Kanbanprocessingclassification",
+                  "Turnovercheckintervaldays",
+                  "Increasedecreasesheetdelaycoefficient",
+                  "UpperLimitSettingofOutgoingTransfersPerFlight",
+                  "Lowerlimitofoutgoingbalancepertransaction",
+                  "Upperlimitofoutgoingbalanceperdelivery",
+                  "Outfeedperrunoutlowerlimitsetting",
+                  "Upperlimitofrunoutperdelivery",
+                  "LowLimitofOutfeedActionSetting",
+                  "UpperLimitofVariationofRealNumberofInputs",
+                  "Actualinputfluctuationlowerlimit",
+                  "ClassificationofKanbanissue",
+                  "ResponsedeliverydateLT",
+                  "Deliverydateconfirmationrelayclassification",
+                  "Deliverydateconfirmationclassification",
+                  "Backendprocesspartnumber",
+                  "Backendprocesscode",
+                  "UpdateDate"
+                ]
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Retrieved basic order master journal received",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CatalogService.BasicOrderMasterJournalReceived"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/error"
+          }
+        }
+      },
+      "patch": {
+        "summary": "Change a single basic order master journal received.",
+        "tags": [
+          "BasicOrderMasterJournalReceived"
+        ],
+        "requestBody": {
+          "description": "New property values",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CatalogService.BasicOrderMasterJournalReceived-update"
+              }
+            }
+          }
+        },
+        "responses": {
+          "204": {
+            "description": "Success"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/error"
+          }
+        }
+      },
+      "delete": {
+        "summary": "Delete a single basic order master journal received.",
+        "tags": [
+          "BasicOrderMasterJournalReceived"
+        ],
+        "responses": {
+          "204": {
+            "description": "Success"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/error"
+          }
+        }
+      }
+    },
     "/BasicOrderMasterJournalReceivedB": {
       "get": {
         "summary": "Retrieve a list of basic order master journal received b.",
@@ -2973,6 +3125,8 @@
               "items": {
                 "type": "string",
                 "enum": [
+                  "BasicOrderMasterJournalReceivedBID",
+                  "BasicOrderMasterJournalReceivedBID desc",
                   "UpdateClassification",
                   "UpdateClassification desc",
                   "DataClassification",
@@ -3036,6 +3190,7 @@
               "items": {
                 "type": "string",
                 "enum": [
+                  "BasicOrderMasterJournalReceivedBID",
                   "UpdateClassification",
                   "DataClassification",
                   "ProcessingEmployeeCode",
@@ -3126,6 +3281,122 @@
         }
       }
     },
+    "/BasicOrderMasterJournalReceivedB({BasicOrderMasterJournalReceivedBID})": {
+      "parameters": [
+        {
+          "description": "key: BasicOrderMasterJournalReceivedBID",
+          "in": "path",
+          "name": "BasicOrderMasterJournalReceivedBID",
+          "required": true,
+          "schema": {
+            "type": "integer",
+            "format": "int32"
+          }
+        }
+      ],
+      "get": {
+        "summary": "Retrieve a single basic order master journal received b.",
+        "tags": [
+          "BasicOrderMasterJournalReceivedB"
+        ],
+        "parameters": [
+          {
+            "name": "$select",
+            "description": "Select properties to be returned, see [Select](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionselect)",
+            "in": "query",
+            "explode": false,
+            "schema": {
+              "type": "array",
+              "uniqueItems": true,
+              "items": {
+                "type": "string",
+                "enum": [
+                  "BasicOrderMasterJournalReceivedBID",
+                  "UpdateClassification",
+                  "DataClassification",
+                  "ProcessingEmployeeCode",
+                  "Dateprocessed",
+                  "ProcessingTime",
+                  "Destination",
+                  "Destinationconstructionarea",
+                  "Destinationshippingpoint",
+                  "Partnumber",
+                  "Processcode",
+                  "Deliverydestination",
+                  "Deliveredto",
+                  "Receivingplace",
+                  "Address",
+                  "Applicablestartdateofdelivery",
+                  "Applicableenddateofdelivery",
+                  "Orderingdelivery",
+                  "Orderavailability",
+                  "UpperLimitRateperFlight",
+                  "Lowerlimitofdispatchperflight",
+                  "Maximumnumberofpiecesperdelivery",
+                  "Lowerlimitofallocationperflight",
+                  "Directequalizationsetting",
+                  "UpdateDate"
+                ]
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Retrieved basic order master journal received b",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CatalogService.BasicOrderMasterJournalReceivedB"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/error"
+          }
+        }
+      },
+      "patch": {
+        "summary": "Change a single basic order master journal received b.",
+        "tags": [
+          "BasicOrderMasterJournalReceivedB"
+        ],
+        "requestBody": {
+          "description": "New property values",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CatalogService.BasicOrderMasterJournalReceivedB-update"
+              }
+            }
+          }
+        },
+        "responses": {
+          "204": {
+            "description": "Success"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/error"
+          }
+        }
+      },
+      "delete": {
+        "summary": "Delete a single basic order master journal received b.",
+        "tags": [
+          "BasicOrderMasterJournalReceivedB"
+        ],
+        "responses": {
+          "204": {
+            "description": "Success"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/error"
+          }
+        }
+      }
+    },
     "/BasicOrderMasterJournalReceivedR": {
       "get": {
         "summary": "Retrieve a list of basic order master journal received r.",
@@ -3164,6 +3435,8 @@
               "items": {
                 "type": "string",
                 "enum": [
+                  "BasicOrderMasterJournalReceivedRID",
+                  "BasicOrderMasterJournalReceivedRID desc",
                   "UpdateDistinction",
                   "UpdateDistinction desc",
                   "Differentiationofdata",
@@ -3235,6 +3508,7 @@
               "items": {
                 "type": "string",
                 "enum": [
+                  "BasicOrderMasterJournalReceivedRID",
                   "UpdateDistinction",
                   "Differentiationofdata",
                   "ProcessingEmployeeConcepts",
@@ -3322,6 +3596,126 @@
                 }
               }
             }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/error"
+          }
+        }
+      }
+    },
+    "/BasicOrderMasterJournalReceivedR({BasicOrderMasterJournalReceivedRID})": {
+      "parameters": [
+        {
+          "description": "key: BasicOrderMasterJournalReceivedRID",
+          "in": "path",
+          "name": "BasicOrderMasterJournalReceivedRID",
+          "required": true,
+          "schema": {
+            "type": "integer",
+            "format": "int32"
+          }
+        }
+      ],
+      "get": {
+        "summary": "Retrieve a single basic order master journal received r.",
+        "tags": [
+          "BasicOrderMasterJournalReceivedR"
+        ],
+        "parameters": [
+          {
+            "name": "$select",
+            "description": "Select properties to be returned, see [Select](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionselect)",
+            "in": "query",
+            "explode": false,
+            "schema": {
+              "type": "array",
+              "uniqueItems": true,
+              "items": {
+                "type": "string",
+                "enum": [
+                  "BasicOrderMasterJournalReceivedRID",
+                  "UpdateDistinction",
+                  "Differentiationofdata",
+                  "ProcessingEmployeeConcepts",
+                  "Processingyearandmonth",
+                  "Processingtime",
+                  "Processingfirst",
+                  "Processingworkarea",
+                  "Teshigashirafactory",
+                  "Numberofitems",
+                  "Worksymbol",
+                  "Inclusion",
+                  "Inclusionoffirstworkarea",
+                  "Includefirst",
+                  "Location",
+                  "Applicablestartdate",
+                  "Applicableenddate",
+                  "Orderofwork",
+                  "PreviousworksInclusion",
+                  "FormerworkInclusionzone",
+                  "PreviousworkInclusionoftheformerworksite",
+                  "Inclusionabbreviation",
+                  "Subprojectincorporatedfirst",
+                  "Subengineeringworkareaincorporatedfirst",
+                  "Subprojectsincorporatedfirst",
+                  "Intermediateworks",
+                  "Intermediatework",
+                  "theintermediateworkarea",
+                  "UpdateDate"
+                ]
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Retrieved basic order master journal received r",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CatalogService.BasicOrderMasterJournalReceivedR"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/error"
+          }
+        }
+      },
+      "patch": {
+        "summary": "Change a single basic order master journal received r.",
+        "tags": [
+          "BasicOrderMasterJournalReceivedR"
+        ],
+        "requestBody": {
+          "description": "New property values",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CatalogService.BasicOrderMasterJournalReceivedR-update"
+              }
+            }
+          }
+        },
+        "responses": {
+          "204": {
+            "description": "Success"
+          },
+          "4XX": {
+            "$ref": "#/components/responses/error"
+          }
+        }
+      },
+      "delete": {
+        "summary": "Delete a single basic order master journal received r.",
+        "tags": [
+          "BasicOrderMasterJournalReceivedR"
+        ],
+        "responses": {
+          "204": {
+            "description": "Success"
           },
           "4XX": {
             "$ref": "#/components/responses/error"
@@ -4209,6 +4603,10 @@
         "title": "BasicOrderMasterJournalReceived",
         "type": "object",
         "properties": {
+          "BasicOrderMasterJournalReceivedID": {
+            "type": "integer",
+            "format": "int32"
+          },
           "UpdateClassification": {
             "type": "string",
             "nullable": true
@@ -4453,6 +4851,259 @@
       },
       "CatalogService.BasicOrderMasterJournalReceived-create": {
         "title": "BasicOrderMasterJournalReceived (for create)",
+        "type": "object",
+        "properties": {
+          "BasicOrderMasterJournalReceivedID": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "UpdateClassification": {
+            "type": "string",
+            "nullable": true
+          },
+          "DataClassification": {
+            "type": "string",
+            "nullable": true
+          },
+          "ProcessingEmployeeCode": {
+            "type": "string",
+            "nullable": true
+          },
+          "Dateprocessed": {
+            "type": "string",
+            "nullable": true
+          },
+          "ProcessingTime": {
+            "type": "string",
+            "nullable": true
+          },
+          "Destination": {
+            "type": "string",
+            "nullable": true
+          },
+          "Destinationconstructionarea": {
+            "type": "string",
+            "nullable": true
+          },
+          "Destinationshippingpoint": {
+            "type": "string",
+            "nullable": true
+          },
+          "Partnumber": {
+            "type": "string",
+            "nullable": true
+          },
+          "Processcodefinalprocess": {
+            "type": "string",
+            "nullable": true
+          },
+          "Deliverydestination": {
+            "type": "string",
+            "nullable": true
+          },
+          "DESTINATSTRUCTEAREA": {
+            "type": "string",
+            "nullable": true
+          },
+          "Receivingplace": {
+            "type": "string",
+            "nullable": true
+          },
+          "Address": {
+            "type": "string",
+            "nullable": true
+          },
+          "Applicablestartdateofdelivery": {
+            "type": "string",
+            "nullable": true
+          },
+          "Applicableenddateofdelivery": {
+            "type": "string",
+            "nullable": true
+          },
+          "Orderer": {
+            "type": "string",
+            "nullable": true
+          },
+          "Orderersoffice": {
+            "type": "string",
+            "nullable": true
+          },
+          "Orderingparty": {
+            "type": "string",
+            "nullable": true
+          },
+          "Orderersconstructionarea": {
+            "type": "string",
+            "nullable": true
+          },
+          "OrdererReceipt": {
+            "type": "string",
+            "nullable": true
+          },
+          "Number": {
+            "type": "string",
+            "nullable": true
+          },
+          "Itemname": {
+            "type": "string",
+            "nullable": true
+          },
+          "Numberofboxes": {
+            "type": "string",
+            "nullable": true
+          },
+          "Boxtype": {
+            "type": "string",
+            "nullable": true
+          },
+          "Unit": {
+            "type": "string",
+            "nullable": true
+          },
+          "ShelfNo": {
+            "type": "string",
+            "nullable": true
+          },
+          "Partsperson": {
+            "type": "string",
+            "nullable": true
+          },
+          "Palletclassification": {
+            "type": "string",
+            "nullable": true
+          },
+          "Specialnote1Referenceinformation1": {
+            "type": "string",
+            "nullable": true
+          },
+          "Specialnote2Referenceinformation2": {
+            "type": "string",
+            "nullable": true
+          },
+          "Specialnote3Referenceinformation3": {
+            "type": "string",
+            "nullable": true
+          },
+          "Kanbanreadingclassification": {
+            "type": "string",
+            "nullable": true
+          },
+          "Arrangementclassification": {
+            "type": "string",
+            "nullable": true
+          },
+          "Kanbancycleclassification": {
+            "type": "string",
+            "nullable": true
+          },
+          "Kanbancycleday": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "Kanbancycle": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "Kanbancycleafter": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "KanbancycleWeekly": {
+            "type": "string",
+            "nullable": true
+          },
+          "Kanbanprocessingclassification": {
+            "type": "string",
+            "nullable": true
+          },
+          "Turnovercheckintervaldays": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "Increasedecreasesheetdelaycoefficient": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "UpperLimitSettingofOutgoingTransfersPerFlight": {
+            "type": "string",
+            "nullable": true
+          },
+          "Lowerlimitofoutgoingbalancepertransaction": {
+            "type": "string",
+            "nullable": true
+          },
+          "Upperlimitofoutgoingbalanceperdelivery": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "Outfeedperrunoutlowerlimitsetting": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "Upperlimitofrunoutperdelivery": {
+            "type": "string",
+            "nullable": true
+          },
+          "LowLimitofOutfeedActionSetting": {
+            "type": "string",
+            "nullable": true
+          },
+          "UpperLimitofVariationofRealNumberofInputs": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "Actualinputfluctuationlowerlimit": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "ClassificationofKanbanissue": {
+            "type": "string",
+            "nullable": true
+          },
+          "ResponsedeliverydateLT": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "Deliverydateconfirmationrelayclassification": {
+            "type": "string",
+            "nullable": true
+          },
+          "Deliverydateconfirmationclassification": {
+            "type": "string",
+            "nullable": true
+          },
+          "Backendprocesspartnumber": {
+            "type": "string",
+            "nullable": true
+          },
+          "Backendprocesscode": {
+            "type": "string",
+            "nullable": true
+          },
+          "UpdateDate": {
+            "type": "string",
+            "format": "date-time",
+            "example": "2017-04-13T15:51:04Z",
+            "nullable": true
+          }
+        },
+        "required": [
+          "BasicOrderMasterJournalReceivedID"
+        ]
+      },
+      "CatalogService.BasicOrderMasterJournalReceived-update": {
+        "title": "BasicOrderMasterJournalReceived (for update)",
         "type": "object",
         "properties": {
           "UpdateClassification": {
@@ -4701,6 +5352,10 @@
         "title": "BasicOrderMasterJournalReceivedB",
         "type": "object",
         "properties": {
+          "BasicOrderMasterJournalReceivedBID": {
+            "type": "integer",
+            "format": "int32"
+          },
           "UpdateClassification": {
             "type": "string",
             "nullable": true
@@ -4807,6 +5462,121 @@
       },
       "CatalogService.BasicOrderMasterJournalReceivedB-create": {
         "title": "BasicOrderMasterJournalReceivedB (for create)",
+        "type": "object",
+        "properties": {
+          "BasicOrderMasterJournalReceivedBID": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "UpdateClassification": {
+            "type": "string",
+            "nullable": true
+          },
+          "DataClassification": {
+            "type": "string",
+            "nullable": true
+          },
+          "ProcessingEmployeeCode": {
+            "type": "string",
+            "nullable": true
+          },
+          "Dateprocessed": {
+            "type": "string",
+            "nullable": true
+          },
+          "ProcessingTime": {
+            "type": "string",
+            "nullable": true
+          },
+          "Destination": {
+            "type": "string",
+            "nullable": true
+          },
+          "Destinationconstructionarea": {
+            "type": "string",
+            "nullable": true
+          },
+          "Destinationshippingpoint": {
+            "type": "string",
+            "nullable": true
+          },
+          "Partnumber": {
+            "type": "string",
+            "nullable": true
+          },
+          "Processcode": {
+            "type": "string",
+            "nullable": true
+          },
+          "Deliverydestination": {
+            "type": "string",
+            "nullable": true
+          },
+          "Deliveredto": {
+            "type": "string",
+            "nullable": true
+          },
+          "Receivingplace": {
+            "type": "string",
+            "nullable": true
+          },
+          "Address": {
+            "type": "string",
+            "nullable": true
+          },
+          "Applicablestartdateofdelivery": {
+            "type": "string",
+            "nullable": true
+          },
+          "Applicableenddateofdelivery": {
+            "type": "string",
+            "nullable": true
+          },
+          "Orderingdelivery": {
+            "type": "string",
+            "nullable": true
+          },
+          "Orderavailability": {
+            "type": "string",
+            "nullable": true
+          },
+          "UpperLimitRateperFlight": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "Lowerlimitofdispatchperflight": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "Maximumnumberofpiecesperdelivery": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "Lowerlimitofallocationperflight": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "Directequalizationsetting": {
+            "type": "string",
+            "nullable": true
+          },
+          "UpdateDate": {
+            "type": "string",
+            "format": "date-time",
+            "example": "2017-04-13T15:51:04Z",
+            "nullable": true
+          }
+        },
+        "required": [
+          "BasicOrderMasterJournalReceivedBID"
+        ]
+      },
+      "CatalogService.BasicOrderMasterJournalReceivedB-update": {
+        "title": "BasicOrderMasterJournalReceivedB (for update)",
         "type": "object",
         "properties": {
           "UpdateClassification": {
@@ -4917,6 +5687,10 @@
         "title": "BasicOrderMasterJournalReceivedR",
         "type": "object",
         "properties": {
+          "BasicOrderMasterJournalReceivedRID": {
+            "type": "integer",
+            "format": "int32"
+          },
           "UpdateDistinction": {
             "type": "string",
             "nullable": true
@@ -5036,6 +5810,134 @@
       },
       "CatalogService.BasicOrderMasterJournalReceivedR-create": {
         "title": "BasicOrderMasterJournalReceivedR (for create)",
+        "type": "object",
+        "properties": {
+          "BasicOrderMasterJournalReceivedRID": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "UpdateDistinction": {
+            "type": "string",
+            "nullable": true
+          },
+          "Differentiationofdata": {
+            "type": "string",
+            "nullable": true
+          },
+          "ProcessingEmployeeConcepts": {
+            "type": "string",
+            "nullable": true
+          },
+          "Processingyearandmonth": {
+            "type": "string",
+            "nullable": true
+          },
+          "Processingtime": {
+            "type": "string",
+            "nullable": true
+          },
+          "Processingfirst": {
+            "type": "string",
+            "nullable": true
+          },
+          "Processingworkarea": {
+            "type": "string",
+            "nullable": true
+          },
+          "Teshigashirafactory": {
+            "type": "string",
+            "nullable": true
+          },
+          "Numberofitems": {
+            "type": "string",
+            "nullable": true
+          },
+          "Worksymbol": {
+            "type": "string",
+            "nullable": true
+          },
+          "Inclusion": {
+            "type": "string",
+            "nullable": true
+          },
+          "Inclusionoffirstworkarea": {
+            "type": "string",
+            "nullable": true
+          },
+          "Includefirst": {
+            "type": "string",
+            "nullable": true
+          },
+          "Location": {
+            "type": "string",
+            "nullable": true
+          },
+          "Applicablestartdate": {
+            "type": "string",
+            "nullable": true
+          },
+          "Applicableenddate": {
+            "type": "string",
+            "nullable": true
+          },
+          "Orderofwork": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "PreviousworksInclusion": {
+            "type": "string",
+            "nullable": true
+          },
+          "FormerworkInclusionzone": {
+            "type": "string",
+            "nullable": true
+          },
+          "PreviousworkInclusionoftheformerworksite": {
+            "type": "string",
+            "nullable": true
+          },
+          "Inclusionabbreviation": {
+            "type": "string",
+            "nullable": true
+          },
+          "Subprojectincorporatedfirst": {
+            "type": "string",
+            "nullable": true
+          },
+          "Subengineeringworkareaincorporatedfirst": {
+            "type": "string",
+            "nullable": true
+          },
+          "Subprojectsincorporatedfirst": {
+            "type": "string",
+            "nullable": true
+          },
+          "Intermediateworks": {
+            "type": "string",
+            "nullable": true
+          },
+          "Intermediatework": {
+            "type": "string",
+            "nullable": true
+          },
+          "theintermediateworkarea": {
+            "type": "string",
+            "nullable": true
+          },
+          "UpdateDate": {
+            "type": "string",
+            "format": "date-time",
+            "example": "2017-04-13T15:51:04Z",
+            "nullable": true
+          }
+        },
+        "required": [
+          "BasicOrderMasterJournalReceivedRID"
+        ]
+      },
+      "CatalogService.BasicOrderMasterJournalReceivedR-update": {
+        "title": "BasicOrderMasterJournalReceivedR (for update)",
         "type": "object",
         "properties": {
           "UpdateDistinction": {
