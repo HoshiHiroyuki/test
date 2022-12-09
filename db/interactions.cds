@@ -24,7 +24,6 @@ entity Interactions_Items {
 entity WorkPerformance {
 
 key WorkPerformanceID : Integer;
-//ActualWorkTimeWorkPerformanceID  : Composition of many ActualWorkTime on ActualWorkTimeWorkPerformanceID.WorkPerformanceID = $self;
 DailyReportDate : Date;
 DayAndNight : String;
 Group : String;
@@ -38,7 +37,6 @@ entity ActualWorkTime {
 
 key ActualWorkTimeID : Integer;
 WorkPerformanceID : Integer;
-//WorkPerformanceID : association to WorkPerformance;
 StartTime : Time;
 EndTime : Time;
 CreateUser : String;
